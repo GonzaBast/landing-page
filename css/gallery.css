@@ -1,0 +1,105 @@
+/* ==========================================
+   GALLERY CSS - Galería de imágenes
+   ========================================== */
+
+.gallery {
+  background: var(--bg-light);
+}
+
+.gallery__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-sm);
+}
+
+.gallery__item {
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  aspect-ratio: 4/3;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-base);
+}
+
+.gallery__item:hover {
+  transform: scale(1.02);
+  box-shadow: var(--shadow-md);
+}
+
+.gallery__item:nth-child(1) {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.gallery__image-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1.25rem;
+  color: var(--text-light);
+  text-align: center;
+  padding: 1rem;
+  transition: transform var(--transition-slow);
+}
+
+.gallery__item:hover .gallery__image-placeholder {
+  transform: scale(1.1);
+}
+
+/* Colores variados para los placeholders */
+.gallery__item:nth-child(1) .gallery__image-placeholder { background: linear-gradient(135deg, #2F7E79, #5CA89D); }
+.gallery__item:nth-child(2) .gallery__image-placeholder { background: linear-gradient(135deg, #5CA89D, #D9F3F1); }
+.gallery__item:nth-child(3) .gallery__image-placeholder { background: linear-gradient(135deg, #4FAF9E, #2E8E80); }
+.gallery__item:nth-child(4) .gallery__image-placeholder { background: linear-gradient(135deg, #D9F3F1, #5CA89D); }
+.gallery__item:nth-child(5) .gallery__image-placeholder { background: linear-gradient(135deg, #2E8E80, #2F7E79); }
+.gallery__item:nth-child(6) .gallery__image-placeholder { background: linear-gradient(135deg, #5CA89D, #4FAF9E); }
+
+.gallery__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(47, 126, 121, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+.gallery__item:hover .gallery__overlay {
+  opacity: 1;
+}
+
+.gallery__overlay-text {
+  color: var(--text-light);
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1rem;
+  text-align: center;
+  padding: 1rem;
+}
+
+@media (max-width: 768px) {
+  .gallery__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gallery__item:nth-child(1) {
+    grid-column: span 2;
+    grid-row: span 1;
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery__item:nth-child(1) {
+    grid-column: span 1;
+  }
+}

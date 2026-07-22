@@ -1,0 +1,55 @@
+/* ==========================================
+   VARIABLES CSS - Paleta de colores y tipografía
+   ========================================== */
+
+:root {
+  /* Colores primarios */
+  --color-primary: #2F7E79;
+  --color-secondary: #5CA89D;
+  --color-tertiary: #D9F3F1;
+  --color-white: #FFFFFF;
+
+  /* Fondos */
+  --bg-light: #F7F9FA;
+  --bg-white: #FFFFFF;
+
+  /* Texto */
+  --text-primary: #2B2B2B;
+  --text-secondary: #6C757D;
+  --text-light: #FFFFFF;
+
+  /* Botones */
+  --btn-primary: #4FAF9E;
+  --btn-hover: #2E8E80;
+
+  /* Sombras */
+  --shadow-sm: 0 2px 8px rgba(47, 126, 121, 0.08);
+  --shadow-md: 0 4px 20px rgba(47, 126, 121, 0.12);
+  --shadow-lg: 0 8px 40px rgba(47, 126, 121, 0.16);
+
+  /* Transiciones */
+  --transition-fast: 0.2s ease;
+  --transition-base: 0.3s ease;
+  --transition-slow: 0.5s ease;
+
+  /* Bordes */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-full: 50%;
+
+  /* Tipografía */
+  --font-heading: 'Poppins', sans-serif;
+  --font-body: 'Nunito', sans-serif;
+
+  /* Espaciado */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 2rem;
+  --spacing-lg: 4rem;
+  --spacing-xl: 6rem;
+
+  /* Contenedor */
+  --container-max: 1200px;
+  --container-padding: 1.5rem;
+}

@@ -1,0 +1,268 @@
+/* ==========================================
+   ABOUT CSS - Secciones Sobre Nosotros, Historia, Valores
+   ========================================== */
+
+/* Sobre Nosotros */
+.about {
+  background: var(--bg-white);
+}
+
+.about__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-lg);
+  align-items: center;
+}
+
+.about__content h2 {
+  margin-bottom: var(--spacing-sm);
+}
+
+.about__text {
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-sm);
+  line-height: 1.8;
+}
+
+.about__image-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.about__image-placeholder {
+  width: 100%;
+  max-width: 480px;
+  aspect-ratio: 4/3;
+  background: linear-gradient(135deg, var(--color-secondary), var(--color-tertiary));
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-primary);
+  font-family: var(--font-heading);
+  font-weight: 600;
+  text-align: center;
+  padding: 2rem;
+  box-shadow: var(--shadow-md);
+}
+
+/* Estadísticas */
+.stats {
+  background: var(--color-primary);
+  padding: var(--spacing-lg) 0;
+}
+
+.stats__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--spacing-md);
+  text-align: center;
+}
+
+.stats__item {
+  padding: var(--spacing-md);
+}
+
+.stats__icon {
+  font-size: 2rem;
+  margin-bottom: var(--spacing-xs);
+  color: var(--color-tertiary);
+}
+
+.stats__number {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 700;
+  color: var(--text-light);
+  display: block;
+}
+
+.stats__label {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.85);
+  margin-top: 0.25rem;
+}
+
+/* Historia - Timeline */
+.timeline {
+  position: relative;
+  padding: var(--spacing-md) 0;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3px;
+  height: 100%;
+  background: var(--color-tertiary);
+  top: 0;
+}
+
+.timeline__item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: var(--spacing-md);
+  position: relative;
+}
+
+.timeline__item:nth-child(odd) {
+  flex-direction: row;
+}
+
+.timeline__item:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.timeline__dot {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 16px;
+  height: 16px;
+  background: var(--btn-primary);
+  border-radius: var(--radius-full);
+  border: 3px solid var(--bg-white);
+  z-index: 1;
+  top: 8px;
+}
+
+.timeline__content {
+  width: calc(50% - 40px);
+  background: var(--bg-light);
+  padding: var(--spacing-md);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-base);
+}
+
+.timeline__content:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.timeline__year {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--color-primary);
+  font-size: 1.1rem;
+  margin-bottom: 0.25rem;
+}
+
+.timeline__title {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.timeline__text {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+/* Misión, Visión, Valores */
+.mvv {
+  background: var(--bg-light);
+}
+
+.mvv__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-md);
+}
+
+.mvv__card {
+  background: var(--bg-white);
+  padding: var(--spacing-md);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  text-align: center;
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.mvv__card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+
+.mvv__icon {
+  font-size: 2rem;
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.mvv__card h3 {
+  margin-bottom: var(--spacing-xs);
+}
+
+.mvv__card p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+/* Valores lista */
+.values__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-md);
+}
+
+.values__item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: var(--spacing-sm);
+  background: var(--bg-light);
+  border-radius: var(--radius-sm);
+  transition: background var(--transition-fast);
+}
+
+.values__item:hover {
+  background: var(--color-tertiary);
+}
+
+.values__item i {
+  color: var(--color-primary);
+  font-size: 1.25rem;
+  width: 24px;
+  text-align: center;
+}
+
+.values__item span {
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .about__grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+
+  .stats__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-sm);
+  }
+
+  .timeline::before {
+    left: 20px;
+  }
+
+  .timeline__item,
+  .timeline__item:nth-child(even) {
+    flex-direction: row;
+    padding-left: 50px;
+  }
+
+  .timeline__dot {
+    left: 20px;
+  }
+
+  .timeline__content {
+    width: 100%;
+  }
+
+  .mvv__grid {
+    grid-template-columns: 1fr;
+  }
+}

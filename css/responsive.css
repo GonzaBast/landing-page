@@ -1,0 +1,76 @@
+/* ==========================================
+   RESPONSIVE CSS - Ajustes generales responsive
+   ========================================== */
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .section {
+    padding: var(--spacing-lg) 0;
+  }
+}
+
+/* Tablets pequeñas y móviles grandes */
+@media (max-width: 768px) {
+  .section {
+    padding: var(--spacing-md) 0;
+  }
+
+  .section-header {
+    margin-bottom: var(--spacing-md);
+  }
+
+  .section-header p {
+    font-size: 1rem;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+
+  .btn {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Móviles pequeños */
+@media (max-width: 480px) {
+  :root {
+    --container-padding: 1rem;
+  }
+
+  .section-header p {
+    font-size: 0.95rem;
+  }
+}
+
+/* Accesibilidad: prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Impresión */
+@media print {
+  .header {
+    position: relative;
+    box-shadow: none;
+  }
+
+  .hero {
+    min-height: auto;
+  }
+
+  .btn,
+  .header__toggle,
+  .testimonials__controls,
+  .contact__social {
+    display: none !important;
+  }
+}

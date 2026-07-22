@@ -1,0 +1,147 @@
+/* ==========================================
+   SERVICES CSS - Tarjetas de servicios
+   ========================================== */
+
+.services {
+  background: var(--bg-light);
+}
+
+.services__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--spacing-md);
+}
+
+.services__card {
+  background: var(--bg-white);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-base);
+  position: relative;
+  overflow: hidden;
+}
+
+.services__card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+.services__card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+}
+
+.services__card:hover::before {
+  opacity: 1;
+}
+
+.services__icon {
+  width: 56px;
+  height: 56px;
+  background: var(--color-tertiary);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-sm);
+  transition: all var(--transition-base);
+}
+
+.services__card:hover .services__icon {
+  background: var(--color-primary);
+  color: var(--text-light);
+}
+
+.services__card h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.15rem;
+}
+
+.services__description {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin-bottom: var(--spacing-sm);
+  line-height: 1.6;
+}
+
+.services__benefits {
+  list-style: none;
+}
+
+.services__benefits li {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  padding: 0.25rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.services__benefits li::before {
+  content: '✓';
+  color: var(--btn-primary);
+  font-weight: 700;
+}
+
+/* Beneficios / Por qué elegirnos */
+.benefits {
+  background: var(--bg-white);
+}
+
+.benefits__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--spacing-md);
+}
+
+.benefits__card {
+  text-align: center;
+  padding: var(--spacing-md);
+  border-radius: var(--radius-md);
+  background: var(--bg-light);
+  transition: all var(--transition-base);
+}
+
+.benefits__card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.benefits__icon {
+  font-size: 2rem;
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.benefits__card h3 {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.benefits__card p {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+}
+
+@media (max-width: 768px) {
+  .benefits__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-sm);
+  }
+}
+
+@media (max-width: 480px) {
+  .benefits__grid {
+    grid-template-columns: 1fr;
+  }
+}
